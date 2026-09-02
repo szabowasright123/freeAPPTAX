@@ -69,9 +69,9 @@ export function HomePage() {
           Tu libro y tus justificantes, bajo tu control
         </h1>
         <p className="max-w-lectura text-lectura text-texto-secundario">
-          Registra tus operaciones y conserva las pruebas que las explican. No necesitas una
-          cuenta: los datos permanecen en este navegador y puedes llevarte una copia cuando
-          quieras.
+          Registra tus operaciones, conserva las pruebas y consulta el valor y la composición
+          de tu cartera. No necesitas una cuenta: los datos permanecen en este navegador y
+          puedes llevarte una copia cuando quieras.
         </p>
         <div className="flex flex-wrap gap-2">
           <button type="button" className={BTN_PRIMARIO} onClick={() => irA('diario')}>
@@ -116,16 +116,25 @@ export function HomePage() {
         )}
       </Card>
 
-      <section className="grid gap-3 sm:grid-cols-2" aria-label="Secciones principales">
+      <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5" aria-label="Secciones principales">
         <Card
           onClick={() => irA('diario')}
           titulo="Libro →"
           subtitulo="Registra y consulta tus operaciones en orden cronológico."
+          className="lg:col-span-2"
         />
         <Card
           onClick={() => irA('archivo')}
           titulo="Archivo →"
           subtitulo="Conserva facturas, extractos y pruebas vinculadas a cada apunte."
+          className="lg:col-span-2"
+        />
+        <Card
+          onClick={() => irA('cartera')}
+          titulo="Cartera →"
+          subtitulo="Visualiza saldos, distribución, coste FIFO y evolución patrimonial."
+          tono="acento"
+          className="sm:col-span-2 lg:col-span-1"
         />
       </section>
 

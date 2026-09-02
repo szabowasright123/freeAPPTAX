@@ -33,10 +33,15 @@ export const RUTAS: EntradaNav[] = [
   { ruta: 'inicio', etiqueta: 'Inicio' },
   { ruta: 'diario', etiqueta: 'Libro' },
   { ruta: 'archivo', etiqueta: 'Archivo' },
+  { ruta: 'cartera', etiqueta: 'Cartera' },
   { ruta: 'ajustes', etiqueta: 'Ajustes' },
 ]
 
 export const SUBRUTAS: Partial<Record<Ruta, EntradaNav[]>> = {
+  cartera: [
+    { ruta: 'cartera', etiqueta: 'Resumen' },
+    { ruta: 'posiciones', etiqueta: 'Posiciones' },
+  ],
   ajustes: [
     { ruta: 'ajustes', etiqueta: 'Copias y ajustes' },
     { ruta: 'importar', etiqueta: 'Importar operaciones' },

@@ -26,6 +26,8 @@ import { ErrorBoundary } from './ErrorBoundary'
 import { useFalloLectura } from '../../data/estadoDatos'
 import { HomePage } from '../pages/HomePage'
 import { DiarioPage } from '../pages/DiarioPage'
+import { CarteraPage } from '../pages/CarteraPage'
+import { PosicionesPage } from '../pages/PosicionesPage'
 import { ArchivoPage } from '../pages/ArchivoPage'
 import { AcercaPage } from '../pages/AcercaPage'
 import { BotonTema } from '../tema-ui'
@@ -53,6 +55,10 @@ function Pagina({ ruta }: { ruta: Ruta }) {
       return <HomePage />
     case 'diario':
       return <DiarioPage />
+    case 'cartera':
+      return <CarteraPage />
+    case 'posiciones':
+      return <PosicionesPage />
     case 'archivo':
       return <ArchivoPage />
     case 'acerca':
