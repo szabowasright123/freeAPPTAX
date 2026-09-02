@@ -131,15 +131,17 @@ export function CarteraPage() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <PageHeader
         titulo="Cartera"
         subtitulo={
-          <Chip tono="brand">
-            Precios manuales
-            {fechaPrecios ? ` · introducidos el ${fmtFecha(fechaPrecios)}` : ''} · nada sale de tu
-            navegador
-          </Chip>
+          <span className="flex flex-wrap items-center gap-2 text-cuerpo text-texto-secundario">
+            <Chip tono="brand">Precios manuales</Chip>
+            <span>
+              {fechaPrecios ? `Actualizados el ${fmtFecha(fechaPrecios)}. ` : ''}
+              Los datos permanecen en este dispositivo.
+            </span>
+          </span>
         }
         acciones={
           <>
@@ -179,14 +181,24 @@ export function CarteraPage() {
               cualquier otra fuente de sistema —el Linux del CI, y un iPhone a 390—. Es el mismo
               riesgo latente de Fiscal, Cierre e Inicio, que hoy se salvan porque sus Stat no van
               dentro de una Card con relleno y tienen 34 px más de holgura. */}
-          <section aria-label="Resumen de la cartera" className="grid gap-3 lg:grid-cols-12">
-            <Card tono="acento" className="lg:col-span-5 lg:flex lg:min-h-52 lg:items-center">
-              <dl>
-                <Stat etiqueta="Valor estimado" valor={fmtEuroCartera(resumen.valorTotalEUR)} />
+          <section aria-label="Resumen de la cartera" className="grid gap-4 lg:grid-cols-12">
+            <section className="relative overflow-hidden rounded-panel bg-brand-600 p-6 text-white shadow-elevada sm:p-8 lg:col-span-7 lg:min-h-64">
+              <div aria-hidden="true" className="absolute -right-20 -top-24 h-64 w-64 rounded-full border-[3rem] border-white/10" />
+              <div aria-hidden="true" className="absolute -bottom-20 right-16 h-48 w-48 rounded-full border-[2rem] border-white/5" />
+              <dl className="relative flex h-full min-h-44 flex-col justify-between">
+                <div>
+                  <dt className="text-cuerpo font-medium text-white/75">Valor estimado</dt>
+                  <dd className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl tabular-nums">
+                    {fmtEuroCartera(resumen.valorTotalEUR)}
+                  </dd>
+                </div>
+                <p className="mt-8 max-w-md text-cuerpo leading-relaxed text-white/75">
+                  Una lectura conjunta de tus saldos, su coste pendiente y los precios que has indicado.
+                </p>
               </dl>
-            </Card>
-            <div className="grid gap-3 sm:grid-cols-2 lg:col-span-7">
-              <Card className="sm:col-span-2">
+            </section>
+            <div className="grid gap-4 sm:grid-cols-2 lg:col-span-5">
+              <Card className="sm:col-span-2 lg:flex lg:items-center">
                 <dl>
                   <Stat
                     etiqueta="Coste FIFO restante (cripto)"
@@ -194,7 +206,7 @@ export function CarteraPage() {
                   />
                 </dl>
               </Card>
-              <Card>
+              <Card className="min-h-32">
                 <dl>
                   <Stat
                     etiqueta={`GyP realizada · ${ejercicioActivo}`}
@@ -202,7 +214,7 @@ export function CarteraPage() {
                   />
                 </dl>
               </Card>
-              <Card>
+              <Card className="min-h-32">
                 <dl>
                   <Stat
                     etiqueta="Plusvalía latente (cripto)"
@@ -215,8 +227,8 @@ export function CarteraPage() {
           </section>
 
           {/* Gráficos. */}
-          <section className="grid gap-4 lg:grid-cols-2">
-            <Card aria-labelledby="cartera-distribucion">
+          <section className="grid gap-4 lg:grid-cols-12">
+            <Card aria-labelledby="cartera-distribucion" className="lg:col-span-7">
               <h2
                 id="cartera-distribucion"
                 className="mb-2 text-titulo font-semibold tracking-tight text-texto"
@@ -225,7 +237,7 @@ export function CarteraPage() {
               </h2>
               <GraficoDistribucion resumen={resumen} />
             </Card>
-            <Card aria-labelledby="cartera-gyp">
+            <Card aria-labelledby="cartera-gyp" className="lg:col-span-5">
               <h2 id="cartera-gyp" className="mb-2 text-titulo font-semibold tracking-tight text-texto">
                 GyP realizada por ejercicio
               </h2>
@@ -243,7 +255,7 @@ export function CarteraPage() {
       )}
 
       {/* Pie. */}
-      <p className="text-center text-apoyo text-texto-mudo">
+      <p className="border-t border-borde pt-5 text-center text-apoyo text-texto-mudo">
         Valoración orientativa a precios manuales. No es asesoramiento ni declaración.
       </p>
     </div>
@@ -306,19 +318,19 @@ function GraficoDistribucion({ resumen }: { resumen: ResumenCartera }) {
   }
 
   return (
-    <div className="flex flex-wrap items-center gap-4">
+    <div className="grid items-center gap-6 sm:grid-cols-[auto_1fr]">
       <DonutDistribucion segmentos={segmentos} totalTexto={fmtEuro(resumen.valorTotalEUR)} />
-      <ul className="min-w-0 flex-1 space-y-1 text-cuerpo">
+      <ul className="min-w-0 space-y-2 text-cuerpo">
         {segmentos.map((s) => (
-          <li key={s.label} className="flex items-center gap-2">
+          <li key={s.label} className="grid grid-cols-[auto_1fr_auto] items-center gap-x-2 gap-y-0.5 rounded-control px-2 py-1.5 hover:bg-superficie">
             <span
               aria-hidden
               className="inline-block h-3 w-3 shrink-0 rounded-sm"
               style={{ backgroundColor: s.color }}
             />
             <span className="font-medium text-texto">{s.label}</span>
-            <span className="ml-auto tabular-nums text-texto-secundario">{s.valorTexto}</span>
-            <span className="w-12 text-right tabular-nums text-texto-mudo">
+            <span className="text-right font-medium tabular-nums text-texto">{s.valorTexto}</span>
+            <span className="col-start-2 text-apoyo tabular-nums text-texto-mudo">
               {s.pct.toFixed(1).replace('.', ',')} %
             </span>
           </li>

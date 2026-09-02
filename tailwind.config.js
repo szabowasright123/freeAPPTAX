@@ -59,7 +59,7 @@ const SEMANTICOS = {
   claro: {
     /* superficie · el lienzo de la página: el fondo sobre el que se apoya todo lo demás.
        NO se pinta en tarjetas ni en filas. stone-50. */
-    superficie: '250 250 249',
+    superficie: '246 248 252',
     /* superficie-elevada · lo que se apoya EN el lienzo y hay que poder recortar con la
        vista: tarjeta, panel, modal, cabecera pegajosa, fila de tabla. Blanco. */
     'superficie-elevada': '255 255 255',
@@ -67,36 +67,36 @@ const SEMANTICOS = {
        el recuadro «Unidad del manual», el chip brand, la fila resaltada. brand-50.
        OJO: sobre este fondo el texto mínimo es `texto-secundario` (7,01:1); `texto-mudo`
        se queda en 4,41:1 y no vale. */
-    'superficie-acento': '253 244 232',
+    'superficie-acento': '235 241 255',
     /* borde · separación DECORATIVA: contorno de tarjeta, línea entre filas, divisorias.
        No delimita ningún control, así que la WCAG no le exige 3:1. stone-200. */
-    borde: '231 229 228',
+    borde: '222 228 240',
     /* borde-fuerte · el contorno que SÍ delimita un control y hay que ver: input, select,
        botón secundario, celda editable. stone-500 → 4,59:1 sobre `superficie` y 4,80:1
        sobre `superficie-elevada` (exige 3:1). */
-    'borde-fuerte': '120 113 108',
+    'borde-fuerte': '100 116 139',
     /* borde-acento · contorno de un realce de marca (Banner «manual», chip brand,
        tarjeta enfocada). brand-200. Decorativo, acompaña siempre a un texto que sí cumple. */
-    'borde-acento': '246 209 158',
+    'borde-acento': '165 185 245',
     /* texto · el texto que se lee: cuerpo, títulos, cifras. stone-900 → 16,74:1 sobre
        `superficie` y 17,49:1 sobre `superficie-elevada`. */
-    texto: '28 25 23',
+    texto: '18 29 51',
     /* texto-secundario · descripciones, subtítulos, ayuda de campo: se lee del todo, pero
        después. stone-600 → 7,30:1 / 7,63:1. */
-    'texto-secundario': '87 83 78',
+    'texto-secundario': '71 85 105',
     /* texto-mudo · lo que solo se mira cuando se busca: unidades, sellos de fecha, pies,
        cabeceras de tabla. stone-500 → 4,59:1 / 4,80:1, justo por encima de AA. Es el suelo
        del sistema: NO existe un cuarto gris más tenue. */
-    'texto-mudo': '120 113 108',
+    'texto-mudo': '100 116 139',
     /* texto-acento · texto interactivo y de marca: enlaces, botón de texto, la serie BTC.
        brand-600 → 4,81:1 sobre `superficie` y 5,02:1 sobre `superficie-elevada`. */
-    'texto-acento': '180 83 9',
+    'texto-acento': '29 78 216',
     /* texto-acento-fuerte · el MISMO enlace, al pasar el ratón por encima: un escalón más
        oscuro para que el hover se note sin cambiar de color. brand-700 → 6,86:1 sobre
        `superficie` y 7,16:1 sobre `superficie-elevada`. Nace en D7 para jubilar los ocho
        `hover:text-brand-700`, que en oscuro dependían de `index.css` para no quedarse en
        1,4:1 (un marrón sobre negro). 6,79:1 / 7,09:1. */
-    'texto-acento-fuerte': '146 64 14',
+    'texto-acento-fuerte': '23 57 154',
     /* semaforo-* · el veredicto del cuadre (DOMINIO §4): verde OK, ámbar REVISAR, rojo
        ERROR. Son TOKENS DE TEMA desde D7, no colores fijos: sus tonos están calibrados para
        fondo claro y sobre el lienzo oscuro caían por debajo de AA, cosa que hasta ahora
@@ -110,35 +110,35 @@ const SEMANTICOS = {
   oscuro: {
     /* stone-950 — el lienzo oscuro deja de ser slate-950 (#020617, negro azulado frío) y
        pasa a la misma base cálida que el resto. Es la decisión del punto 1 de D1. */
-    superficie: '12 10 9',
+    superficie: '9 15 28',
     /* stone-900 — la elevación en oscuro no la da la sombra (no se ve), la da el tono:
        la tarjeta es un escalón MÁS CLARA que el lienzo, más el hilo de `borde`. */
-    'superficie-elevada': '28 25 23',
+    'superficie-elevada': '17 27 46',
     /* Marrón profundo de la familia brand: 1,43:1 sobre el lienzo y 1,27:1 sobre la
        tarjeta — se distingue como panel sin encender la pantalla. brand-200 encima da
        9,56:1 y stone-100, 12,67:1. */
-    'superficie-acento': '58 42 18',
+    'superficie-acento': '25 45 90',
     /* stone-700 — en oscuro el hilo decorativo tiene que ser MÁS claro que su fondo
        (1,70:1 sobre la tarjeta); stone-800 se perdía. */
-    borde: '68 64 60',
+    borde: '40 54 77',
     /* stone-500 → 4,12:1 sobre el lienzo y 3,65:1 sobre la tarjeta (exige 3:1). Mismo tono
        que en claro: es el punto de la escala que cumple por los dos lados. */
-    'borde-fuerte': '120 113 108',
+    'borde-fuerte': '100 116 139',
     /* brand-700 — el acento en oscuro se apoya en el fondo `superficie-acento`, no grita. */
-    'borde-acento': '146 64 14',
+    'borde-acento': '64 97 196',
     /* stone-100 → 18,11:1 sobre el lienzo y 16,03:1 sobre la tarjeta. */
-    texto: '245 245 244',
+    texto: '241 245 249',
     /* stone-300 → 13,26:1 / 11,74:1. */
-    'texto-secundario': '214 211 209',
+    'texto-secundario': '203 213 225',
     /* stone-400 → 7,83:1 / 6,93:1. En oscuro el gris apagado sube dos escalones: el mismo
        stone-500 del modo claro se quedaría en 3,6:1. */
-    'texto-mudo': '168 162 158',
+    'texto-mudo': '148 163 184',
     /* brand-200 → 13,67:1 sobre el lienzo y 12,10:1 sobre la tarjeta. El brand-600 del modo
        claro está calibrado para fondo blanco y aquí caería a 1,9:1. */
-    'texto-acento': '246 209 158',
+    'texto-acento': '147 177 255',
     /* brand-100 → 16,49:1 / 14,60:1. En oscuro el hover ACLARA, que es como se sube un
        escalón cuando el fondo es negro. */
-    'texto-acento-fuerte': '251 232 205',
+    'texto-acento-fuerte': '188 207 255',
     /* Los tres del semáforo, dos escalones más claros: ok 11,34:1 / 10,04:1 · revisar
        11,83:1 / 10,48:1 · error 7,14:1 / 6,32:1. Son exactamente los tonos que `index.css`
        inyectaba a mano; la diferencia es que ahora se leen aquí, con el resto del sistema. */
@@ -172,17 +172,17 @@ export default {
         // correcto en cada tema. Escribe `brand-*` a pelo solo cuando el tono importe de
         // verdad (la serie BTC de un gráfico es brand-500 en los dos temas).
         brand: {
-          50: '#fdf4e8',
-          100: '#fbe8cd',
-          200: '#f6d19e', // texto de marca en OSCURO (12,10:1 sobre superficie-elevada)
-          500: '#e8820c', // marcas, acentos, serie BTC
-          600: '#b45309', // texto interactivo y botón sólido (5,02:1 sobre blanco)
-          700: '#92400e',
+          50: '#eef3ff',
+          100: '#dce7ff',
+          200: '#a5b9f5',
+          500: '#3264e8',
+          600: '#1d4ed8',
+          700: '#17399a',
         },
         ...colorTokens,
       },
       fontFamily: {
-        sans: ['system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+        sans: ['Aptos', 'Segoe UI Variable', 'Segoe UI', 'system-ui', 'sans-serif'],
       },
       /*
        * ESCALA TIPOGRÁFICA — siete pasos con su interlineado, y ni uno más.
@@ -232,9 +232,9 @@ export default {
          * `rounded-full` ×26, `rounded-sm` ×2, `rounded-xl` ×1) para estos mismos tres.
          */
         // Lo que se pulsa o se escribe: botón, input, select, chip cuadrado, celda.
-        control: '0.375rem',
+        control: '0.625rem',
         // Lo que contiene: Card, Banner, Modal, tabla, bloque del Panel.
-        panel: '0.625rem',
+        panel: '1rem',
         // Lo que es una etiqueta: Chip, sello KYC, el número redondo de un paso.
         pildora: '9999px',
       },
@@ -247,9 +247,9 @@ export default {
          * lleva las dos cosas —sombra y borde— y no se elige entre ellas.
          */
         // Nivel 1 — apoyado en el lienzo: Card, input, botón secundario, fila destacada.
-        reposo: '0 1px 2px 0 rgb(28 25 23 / 0.06), 0 1px 3px 0 rgb(28 25 23 / 0.05)',
+        reposo: '0 1px 2px rgb(30 64 175 / 0.04), 0 8px 24px -16px rgb(30 64 175 / 0.18)',
         // Nivel 2 — flotando SOBRE el contenido: Modal, cabecera pegajosa, menú, popover.
-        elevada: '0 4px 12px -2px rgb(28 25 23 / 0.10), 0 2px 6px -2px rgb(28 25 23 / 0.06)',
+        elevada: '0 18px 48px -24px rgb(30 64 175 / 0.32), 0 4px 12px -6px rgb(30 64 175 / 0.14)',
       },
     },
   },

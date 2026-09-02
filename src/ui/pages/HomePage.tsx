@@ -3,7 +3,7 @@ import { abrirBaseDatos, db, estadoAlmacenamientoPersistente } from '../../data/
 import { useLiveQuery } from '../../data/useLiveQuery'
 import { estadoCopia } from '../../data/repositorio'
 import { necesitaRecordatorioCopia, textoRecordatorio } from '../../data/copias'
-import { Banner, BTN_PRIMARIO, BTN_SECUNDARIO, Card, Chip, EmptyState, Stat } from '../comp'
+import { Banner, Card, Chip, EmptyState, Stat } from '../comp'
 import { irA } from '../shell/rutas'
 import { PanelInstalacion } from '../../pwa/PanelInstalacion'
 
@@ -73,14 +73,6 @@ export function HomePage() {
           de tu cartera. No necesitas una cuenta: los datos permanecen en este navegador y
           puedes llevarte una copia cuando quieras.
         </p>
-        <div className="flex flex-wrap gap-2">
-          <button type="button" className={BTN_PRIMARIO} onClick={() => irA('diario')}>
-            Abrir mi libro
-          </button>
-          <button type="button" className={BTN_SECUNDARIO} onClick={() => irA('archivo')}>
-            Abrir mi archivo
-          </button>
-        </div>
       </section>
 
       {recordatorio && !copiaDescartada && (

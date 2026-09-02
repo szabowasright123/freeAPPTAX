@@ -40,10 +40,10 @@ import {
 
 /** Clases de botón reutilizables: la base común a todas las variantes. */
 export const BTN =
-  'inline-flex items-center justify-center gap-1.5 rounded-control px-3 py-1.5 text-cuerpo font-medium ' +
-  'transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 ' +
+  'inline-flex items-center justify-center gap-1.5 rounded-control px-3.5 py-2 text-cuerpo font-semibold ' +
+  'transition-all active:translate-y-px focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 ' +
   'disabled:cursor-not-allowed disabled:opacity-50'
-export const BTN_PRIMARIO = `${BTN} bg-brand-600 text-white hover:bg-brand-700`
+export const BTN_PRIMARIO = `${BTN} bg-brand-600 text-white shadow-reposo hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-elevada`
 
 /**
  * Botón secundario DEL SISTEMA: la acción que acompaña a la primaria.
@@ -207,7 +207,7 @@ export function Card({
   'data-visita'?: string
 }) {
   const base = cx(
-    'rounded-panel border shadow-reposo',
+    'rounded-panel border shadow-reposo transition-[border-color,box-shadow,transform] duration-200',
     tono === 'acento'
       ? 'border-borde-acento bg-superficie-acento'
       : 'border-borde bg-superficie-elevada',

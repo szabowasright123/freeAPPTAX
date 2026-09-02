@@ -30,6 +30,7 @@ import { CarteraPage } from '../pages/CarteraPage'
 import { PosicionesPage } from '../pages/PosicionesPage'
 import { ArchivoPage } from '../pages/ArchivoPage'
 import { AcercaPage } from '../pages/AcercaPage'
+import { PlanesPage } from '../pages/PlanesPage'
 import { BotonTema } from '../tema-ui'
 
 // Ajustes arrastra las librerías pesadas de xlsx (SheetJS) y exceljs: se carga bajo
@@ -63,6 +64,8 @@ function Pagina({ ruta }: { ruta: Ruta }) {
       return <ArchivoPage />
     case 'acerca':
       return <AcercaPage />
+    case 'planes':
+      return <PlanesPage />
     case 'ajustes':
       return (
         <Suspense fallback={<Cargando que="Ajustes" />}>
@@ -113,23 +116,27 @@ export function AppShell() {
   return (
     // El lienzo de la app sale de los tokens del sistema (D1): stone-50 en claro, stone-950
     // en oscuro. Toda la cabecera, el SubNav y el pie hablan ya en tokens, sin grises fríos.
-    <div className="min-h-full bg-superficie text-texto">
-      <header className="sticky top-0 z-40 border-b border-borde bg-superficie-elevada/90 backdrop-blur">
+    <div className="min-h-full bg-transparent text-texto">
+      <header className="sticky top-0 z-40 border-b border-borde/80 bg-superficie-elevada/85 shadow-reposo backdrop-blur-xl">
         <div className="mx-auto max-w-6xl px-4 2xl:max-w-[90rem]">
           {/* Fila 1: marca discreta + utilidades. Siempre cabe (la marca se recorta antes
               que desbordar), así la página nunca se desplaza en horizontal. */}
-          <div className="flex items-center gap-4 py-2.5">
+          <div className="flex items-center gap-4 py-3">
             <button
               type="button"
               onClick={() => irA('inicio')}
-              className={cx('flex min-w-0 rounded-control text-left', FOCO)}
+              className={cx('group flex min-w-0 items-center gap-3 rounded-control text-left', FOCO)}
             >
+              <span aria-hidden="true" className="relative grid h-9 w-9 shrink-0 place-items-center overflow-hidden rounded-control bg-brand-600 text-white shadow-reposo">
+                <span className="-translate-x-px -translate-y-px text-[1.15rem] font-black leading-none tracking-[-0.12em]">L</span>
+                <span className="absolute bottom-[8px] left-[11px] h-[2px] w-[15px] rounded-pildora bg-white/70" />
+              </span>
               <span className="min-w-0 leading-tight">
                 <span className="block truncate text-titulo font-semibold tracking-tight text-texto">
-                  Libro Hespérides
+                  LegeLearning
                 </span>
                 <span className="block truncate text-caption text-texto-mudo">
-                  Libro y archivo personal
+                  Patrimonio y archivo personal
                 </span>
               </span>
             </button>
@@ -147,9 +154,24 @@ export function AppShell() {
               del color. */}
           <div className="flex items-end gap-4">
             <BarraSecciones principal={principal} />
-            {/* §5.3 — en las rutas que no cuelgan de ninguna pestaña (p. ej. «Acerca de»,
-                a la que se llega por el pie) la cabecera lo dice en palabras. */}
-            {principal === null && (
+            <button
+              type="button"
+              onClick={() => irA('acerca')}
+              aria-current={ruta === 'acerca' ? 'page' : undefined}
+              aria-label="Conocer la formación, la comunidad y los servicios de LEGEL"
+              className={cx(
+                'mb-2 shrink-0 whitespace-nowrap rounded-control border px-3 py-2 text-cuerpo font-semibold transition-colors active:translate-y-px',
+                FOCO,
+                ruta === 'acerca'
+                  ? 'border-brand-600 bg-brand-600 text-white'
+                  : 'border-brand-300 bg-superficie text-texto-acento hover:border-brand-500 hover:bg-superficie-acento',
+              )}
+            >
+              Aprende con LEGEL
+            </button>
+            {/* En las rutas auxiliares restantes, la cabecera indica el contexto. Acerca de
+                ya dispone de un acceso permanente porque conecta la app con el ecosistema. */}
+            {principal === null && ruta !== 'acerca' && (
               <p className="shrink-0 whitespace-nowrap pb-2.5 text-cuerpo">
                 <span className="text-texto-mudo">Estás en </span>
                 <span className="font-semibold text-texto">{etiquetaDe(ruta)}</span>
@@ -159,7 +181,7 @@ export function AppShell() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-6xl px-4 py-6 2xl:max-w-[90rem]">
+      <main className="mx-auto max-w-6xl px-4 py-7 sm:py-9 2xl:max-w-[90rem]">
         {subrutas.length > 1 && (
           <SubNav
             rutaActual={ruta}
@@ -179,7 +201,7 @@ export function AppShell() {
         </ErrorBoundary>
       </main>
 
-      <footer className="mx-auto max-w-6xl px-4 py-6 text-center text-caption text-texto-mudo print:hidden 2xl:max-w-[90rem]">
+      <footer className="mx-auto max-w-6xl px-4 py-8 text-center text-caption text-texto-mudo print:hidden 2xl:max-w-[90rem]">
         <button
           type="button"
           onClick={() => irA('acerca')}
@@ -251,10 +273,10 @@ function BarraSecciones({ principal }: { principal: Ruta | null }) {
               onClick={() => irA(r)}
               aria-current={activa ? 'page' : undefined}
               className={cx(
-                'relative shrink-0 whitespace-nowrap rounded-control px-3 pb-2.5 pt-1.5 text-cuerpo transition-colors',
+                'relative shrink-0 whitespace-nowrap rounded-control px-3 pb-3 pt-2 text-cuerpo transition-colors',
                 FOCO,
                 activa
-                  ? 'font-semibold text-texto-acento'
+                  ? 'bg-superficie-acento font-semibold text-texto-acento'
                   : 'font-medium text-texto-secundario hover:bg-superficie hover:text-texto',
               )}
             >
@@ -262,7 +284,7 @@ function BarraSecciones({ principal }: { principal: Ruta | null }) {
               {activa && (
                 <span
                   aria-hidden="true"
-                  className="absolute inset-x-2 bottom-0 h-0.5 rounded-pildora bg-brand-500"
+                  className="absolute inset-x-3 bottom-0 h-0.5 rounded-pildora bg-brand-500"
                 />
               )}
             </button>

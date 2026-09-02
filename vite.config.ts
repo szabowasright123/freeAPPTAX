@@ -34,8 +34,8 @@ export default defineConfig({
       registerType: 'prompt', // el alumno decide cuándo recargar a la nueva versión
       includeAssets: ['icon.svg', 'icon-maskable.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Libro Hespérides',
-        short_name: 'Hespérides',
+        name: 'LegeLearning | Libro Hespérides',
+        short_name: 'LegeLearning',
         description: 'Libro y archivo personal, gratuito, instalable y local-first.',
         lang: 'es-ES',
         dir: 'ltr',

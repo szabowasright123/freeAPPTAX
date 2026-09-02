@@ -23,6 +23,40 @@ body,
   height: 100%;
 }
 
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 82% -10%, rgb(50 100 232 / 0.10), transparent 34rem),
+    rgb(var(--superficie));
+  font-feature-settings: 'ss01' 1, 'cv02' 1, 'cv03' 1;
+  text-rendering: optimizeLegibility;
+}
+
+:root.dark body {
+  background:
+    radial-gradient(circle at 82% -10%, rgb(50 100 232 / 0.14), transparent 38rem),
+    rgb(var(--superficie));
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    transition-duration: 180ms;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
 /*
  * LIENZO DE LA PÁGINA.
  *
