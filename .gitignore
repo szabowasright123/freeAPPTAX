@@ -1,0 +1,75 @@
+# Dependencias
+node_modules/
+
+# Builds
+dist/
+dist-ssr/
+*.local
+
+# Vitest / cobertura
+coverage/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# TypeScript incremental
+*.tsbuildinfo
+node_modules/.tmp/
+
+# Editores / SO
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Internos de trabajo (no publicar) ---
+.claude/
+_to_delete/
+LEEME.txt
+docs/APP_TALLER_Plan_y_Hoja_de_Ruta.md
+docs/APP_TALLER_Prompts_Claude_Code.md
+docs/ORDEN_P9_IDENTIDAD_CARTERA_DEMO.md
+docs/COTEJO_F1.md
+docs/COTEJO_F4.md
+docs/INFORME_PUERTAS_1_2.md
+docs/ESTADO.md
+docs/PENDIENTE_TEXTOS.md
+docs/TEXTOS_MANUAL_RANURAS.md
+docs/DECISIONES.md
+docs/DEFI_EVENTOS_COMPLEJOS.md
+docs/ENTIDADES_721_SEMILLA.md
+docs/reference/DOMINIO.md
+docs/INSTALACION_ALUMNO.pdf
+docs/INSTALACION_ALUMNO.fuente.html
+
+# --- Material del taller ---
+# La plantilla SÍ se publica: viaja en src/assets/plantilla-taller.xlsx porque el export
+# parte de ella y sin ella la app no exporta. Esta copia de docs/reference queda fuera
+# solo para no duplicar 57 kB del mismo binario (mismo md5).
+docs/reference/PLANTILLA_TALLER.xlsx
+
+# Copias de seguridad locales
+*.bak
+
+# Informes internos de barrido y validación (trabajo del responsable, no publicar)
+docs/BARRIDO_NORMATIVO_*.md
+docs/VALIDACION_CRITERIOS_*.md
+
+# Capturas del rediseño de interfaz (material de trabajo, pesan y se regeneran)
+capturas/
+docs/PROMPT_TALLER_ENTREGABLES.md

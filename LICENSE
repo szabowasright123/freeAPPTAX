@@ -1,0 +1,544 @@
+# LICENCIA DE CÓDIGO FUENTE PÚBLICO PARA USO PERSONAL  
+## Personal Use Source License — Versión 1.0 (PUSL-1.0)
+
+Copyright © 2026 Javier Bravezo Durán. Todos los derechos reservados salvo los expresamente concedidos en esta Licencia.
+
+**Software:** Libro Hespérides  
+**Titular:** Javier Bravezo Durán  
+**Contacto para licencias profesionales o comerciales:** javier@legel.es
+
+---
+
+## 1. Objeto de la Licencia
+
+La presente licencia regula el acceso, descarga, reproducción, ejecución, estudio, verificación y modificación del código fuente de **Libro Hespérides** (en adelante, el «Software»).
+
+El Titular pone públicamente a disposición el código fuente del Software con la finalidad de permitir su inspección, auditoría, estudio y utilización personal.
+
+La publicación del código fuente **no implica renuncia, cesión general ni transmisión de los derechos de propiedad intelectual sobre el Software**, salvo las facultades expresamente concedidas en esta Licencia.
+
+Esta Licencia concede exclusivamente un derecho de uso personal en los términos establecidos a continuación.
+
+---
+
+## 2. Naturaleza de la Licencia
+
+El Software se distribuye bajo un modelo de **código fuente público o “source-available”**.
+
+Esta Licencia no concede autorización general para utilizar el Software con cualquier finalidad.
+
+En particular, **NO SE AUTORIZA EL USO PROFESIONAL, EMPRESARIAL, INSTITUCIONAL O COMERCIAL**, salvo que exista autorización previa y expresa del Titular o se haya obtenido una licencia específica para dicho uso.
+
+---
+
+## 3. Definiciones
+
+### 3.1. «Software»
+
+Se entenderá por Software el programa identificado como **Libro Hespérides**, incluyendo, salvo indicación expresa en contrario:
+
+- su código fuente;
+- código objeto o ejecutables;
+- scripts;
+- interfaces;
+- módulos propios;
+- componentes propios;
+- documentación;
+- archivos de configuración;
+- estructura original del proyecto;
+- actualizaciones y versiones publicadas por el Titular.
+
+Los componentes de terceros incluidos en el repositorio que dispongan de una licencia propia se regirán exclusivamente por sus respectivas licencias.
+
+### 3.2. «Usuario»
+
+Persona física o jurídica que acceda, descargue, copie, ejecute, estudie o realice cualquier otra actuación respecto del Software.
+
+### 3.3. «Uso Personal»
+
+Se entiende por Uso Personal la utilización realizada por una **persona física exclusivamente para fines privados y ajenos a cualquier actividad profesional, empresarial, laboral, institucional o económica**.
+
+Podrán considerarse Uso Personal, entre otros:
+
+a) la utilización privada del Software en dispositivos propios;
+
+b) su utilización con fines de aprendizaje individual;
+
+c) la experimentación, investigación o prueba realizada a título estrictamente particular;
+
+d) la auditoría o comprobación personal de su funcionamiento, seguridad, privacidad o comportamiento;
+
+e) la realización de modificaciones destinadas exclusivamente al uso privado de quien las realiza.
+
+El hecho de que una determinada utilización no genere directamente ingresos **no determina por sí solo que constituya Uso Personal**.
+
+### 3.4. «Uso Profesional»
+
+Se considera Uso Profesional cualquier utilización relacionada directa o indirectamente con una actividad profesional, empresarial, laboral, institucional, administrativa, económica o de prestación de servicios.
+
+Constituyen Uso Profesional, entre otros:
+
+a) el uso por profesionales autónomos en el ejercicio de su actividad;
+
+b) el uso por sociedades mercantiles, despachos profesionales, asociaciones, fundaciones, administraciones públicas u otras organizaciones;
+
+c) el uso por trabajadores, colaboradores o contratistas para desarrollar tareas relacionadas con su actividad laboral o profesional;
+
+d) el uso para gestionar clientes, expedientes, proyectos, operaciones o recursos de una actividad profesional;
+
+e) el uso interno del Software por una empresa u organización, aunque el Software no se comercialice ni se cobre directamente por su utilización;
+
+f) el uso para prestar servicios a terceros;
+
+g) el uso del Software como herramienta auxiliar de una actividad económica.
+
+### 3.5. «Uso Comercial»
+
+Se considera Uso Comercial cualquier utilización del Software destinada directa o indirectamente a obtener ingresos, beneficios económicos, ahorro empresarial, ventaja competitiva o cualquier otra contraprestación o beneficio de naturaleza económica.
+
+### 3.6. «Modificación» u «Obra Derivada»
+
+Se entenderá por Modificación cualquier adaptación, transformación, alteración, ampliación, reducción, traducción, arreglo o desarrollo efectuado a partir total o parcialmente del Software y que incorpore elementos protegidos del mismo.
+
+---
+
+# 4. Derechos concedidos para Uso Personal
+
+Sujeto al cumplimiento íntegro de esta Licencia, el Titular concede a las personas físicas una autorización:
+
+- gratuita;
+- no exclusiva;
+- mundial;
+- no transferible;
+- no sublicenciable,
+
+para realizar exclusivamente los siguientes actos:
+
+### 4.1. Acceso
+
+Acceder y visualizar públicamente el código fuente del Software.
+
+### 4.2. Descarga
+
+Descargar una o varias copias del Software para Uso Personal.
+
+### 4.3. Ejecución
+
+Instalar y ejecutar el Software en dispositivos, servidores o infraestructuras controlados por el Usuario, siempre que su utilización tenga exclusivamente carácter personal.
+
+La ejecución del Software en un servidor privado no tendrá por sí misma consideración de Uso Profesional cuando el único beneficiario y usuario efectivo sea la propia persona física y concurran los restantes requisitos del Uso Personal.
+
+### 4.4. Estudio y auditoría
+
+Examinar, estudiar, analizar, auditar y verificar el código fuente y el funcionamiento del Software.
+
+Esta autorización incluye expresamente la investigación de:
+
+- su funcionamiento;
+- comportamiento;
+- arquitectura;
+- privacidad;
+- tratamiento de información;
+- seguridad;
+- vulnerabilidades;
+- ideas y principios subyacentes,
+
+dentro de los límites establecidos por la legislación aplicable.
+
+### 4.5. Copias de seguridad
+
+Realizar las copias de seguridad razonablemente necesarias para el Uso Personal autorizado.
+
+### 4.6. Modificaciones privadas
+
+Modificar el Software exclusivamente para Uso Personal.
+
+El Usuario podrá crear versiones modificadas, forks o adaptaciones privadas siempre que:
+
+a) no sean explotadas profesional o comercialmente;
+
+b) no sean puestas a disposición de terceros fuera de los supuestos expresamente autorizados;
+
+c) no se eliminen ni alteren los avisos de propiedad intelectual incluidos en el Software;
+
+d) no se presenten como versiones oficiales del Software.
+
+
+### 4.7. Divulgación de análisis
+
+Se autoriza la publicación de análisis, opiniones, capturas de pantalla e informes de
+auditoría o seguridad referidos al Software, incluyendo la reproducción de los fragmentos
+de código razonablemente necesarios para fundamentar el análisis, siempre que no supongan
+la puesta a disposición de una parte sustancial del Software y se cite su procedencia.
+Para vulnerabilidades, se agradece la comunicación previa al Titular en **javier@legel.es**.
+
+### 4.8. Carácter de la autorización
+
+La autorización concedida por esta Licencia respecto de una versión concreta del Software
+tiene carácter irrevocable mientras el Usuario cumpla sus términos, sin perjuicio de la
+facultad del Titular de publicar versiones futuras bajo condiciones distintas (cláusula 22)
+y de la terminación por incumplimiento (cláusula 14).
+
+---
+
+# 5. Usos expresamente prohibidos
+
+Salvo autorización previa y escrita del Titular, queda prohibido utilizar el Software o cualquier Modificación del mismo para cualquiera de las siguientes finalidades.
+
+## 5.1. Uso profesional
+
+Queda prohibida cualquier utilización del Software en el ejercicio de una profesión, oficio o actividad económica.
+
+A título ejemplificativo, una persona que utilice el Software para prestar servicios a sus clientes estará realizando un Uso Profesional, aunque no facture específicamente por el Software.
+
+## 5.2. Uso empresarial interno
+
+Queda prohibido instalar, ejecutar o utilizar el Software dentro de una empresa, despacho profesional, sociedad, organización o estructura empresarial para sus propias necesidades internas.
+
+Esta prohibición resulta aplicable aunque:
+
+- el Software no sea revendido;
+- no se cobre por acceder al Software;
+- únicamente lo utilicen trabajadores de la organización;
+- su utilización tenga como finalidad reducir costes o automatizar procesos internos.
+
+## 5.3. Prestación de servicios
+
+Queda prohibido utilizar el Software para prestar servicios profesionales o comerciales a terceros.
+
+## 5.4. Software como servicio
+
+Queda expresamente prohibido poner el Software o una Modificación del mismo a disposición de terceros mediante:
+
+- SaaS;
+- PaaS;
+- servicios alojados;
+- servidores remotos;
+- plataformas web;
+- aplicaciones web;
+- aplicaciones móviles;
+- APIs;
+- bots;
+- servicios automatizados;
+- servicios en la nube;
+- acceso remoto,
+
+cuando dicho acceso forme parte de una actividad profesional, empresarial, institucional o comercial.
+
+## 5.5. Integración comercial
+
+Queda prohibido incorporar total o parcialmente el Software en:
+
+- productos comerciales;
+- servicios profesionales;
+- soluciones empresariales;
+- plataformas de terceros;
+- paquetes de software;
+- sistemas comercializados;
+- servicios sujetos a suscripción;
+- productos vendidos, licenciados o explotados económicamente.
+
+## 5.6. Venta y sublicencia
+
+Queda prohibido:
+
+- vender el Software;
+- alquilarlo;
+- sublicenciarlo;
+- comercializarlo;
+- ofrecer licencias sobre el mismo;
+- cobrar por facilitar el acceso al Software;
+- atribuirse facultades de explotación comercial sobre el Software original.
+
+## 5.7. Explotación de modificaciones
+
+La autorización para modificar el Software concedida por esta Licencia se limita estrictamente al Uso Personal.
+
+Por tanto, una Modificación realizada por un Usuario **no podrá ser explotada profesional o comercialmente junto con los elementos del Software preexistente** sin autorización previa y expresa del Titular.
+
+El hecho de que el Usuario pueda ostentar derechos de propiedad intelectual sobre sus aportaciones originales no implica autorización para explotar el Software preexistente ni el resultado combinado o derivado cuando dicha explotación requiera derechos pertenecientes al Titular.
+
+## 5.8. Prestación comercial de instalación o adaptación
+
+Queda prohibido utilizar el Software como objeto sustancial de servicios remunerados de:
+
+- instalación;
+- configuración;
+- adaptación;
+- personalización;
+- alojamiento;
+- mantenimiento;
+- integración;
+- explotación;
+- soporte,
+
+salvo autorización del Titular.
+
+---
+
+# 6. Distribución y publicación
+
+Esta Licencia **no concede un derecho general de redistribución pública del Software**.
+
+El Usuario podrá conservar copias para su propio Uso Personal, pero no podrá, sin autorización previa del Titular:
+
+a) publicar copias completas del Software en otros repositorios;
+
+b) crear mirrors públicos;
+
+c) redistribuir ejecutables;
+
+d) redistribuir versiones modificadas;
+
+e) publicar públicamente forks que incorporen código protegido del Software;
+
+f) entregar copias del Software como parte de un producto o servicio propio.
+
+Sí estará permitido enlazar libremente al repositorio o canal oficial mediante el cual el Titular publique el Software.
+
+Lo anterior se entenderá sin perjuicio de aquellos usos concretos que resulten permitidos imperativamente por la legislación aplicable.
+
+No obstante lo anterior, cuando el Software se publique a través de una plataforma de
+alojamiento de repositorios (p. ej., GitHub), se autorizan aquellos actos técnicos
+inherentes al funcionamiento de la plataforma —incluida la creación de forks dentro de la
+propia plataforma— en la medida exigida por sus condiciones de servicio. Esta autorización
+no amplía los derechos de uso, ejecución o explotación regulados en las restantes cláusulas.
+
+---
+
+# 7. Modificaciones y derechos de propiedad intelectual
+
+La presente Licencia permite crear Modificaciones exclusivamente para Uso Personal.
+
+La autoría y titularidad sobre las aportaciones originales realizadas por terceros se determinará de conformidad con la legislación aplicable.
+
+No obstante, ningún derecho que corresponda al autor de una Modificación podrá interpretarse como una autorización para reproducir, distribuir, comunicar públicamente o explotar profesional o comercialmente los elementos del Software original incorporados a dicha Modificación fuera de los términos de esta Licencia.
+
+Por tanto, cuando una versión modificada dependa jurídicamente de derechos de explotación correspondientes al Titular sobre el Software original, **su explotación profesional o comercial requerirá autorización expresa del Titular**.
+
+---
+
+# 8. Contribuciones al proyecto oficial
+
+La presente Licencia no implica cesión al Titular de los derechos sobre modificaciones desarrolladas por terceros.
+
+La aceptación de contribuciones, pull requests, código, documentación u otras aportaciones destinadas a incorporarse al proyecto oficial podrá estar condicionada a la aceptación de un acuerdo adicional de contribución o **Contributor License Agreement (CLA)**.
+
+El mero envío de una contribución no otorgará al remitente derechos de explotación sobre el resto del Software.
+
+El Titular podrá rechazar cualquier contribución que no venga acompañada de las autorizaciones que considere necesarias.
+
+---
+
+# 9. Licencias profesionales y comerciales
+
+Cualquier persona física o jurídica que desee utilizar el Software para una finalidad profesional, empresarial, institucional o comercial deberá obtener previamente una licencia independiente del Titular.
+
+La concesión de derechos profesionales o comerciales deberá constar de forma expresa.
+
+Podrán establecerse condiciones económicas y contractuales diferentes para distintos:
+
+- usuarios;
+- empresas;
+- sectores;
+- modalidades de utilización;
+- volúmenes de uso;
+- productos;
+- servicios;
+- integraciones.
+
+La publicación gratuita del código fuente para Uso Personal no obliga al Titular a conceder licencias profesionales o comerciales.
+
+Para solicitar autorización:
+
+**javier@legel.es**
+
+---
+
+# 10. Reserva de derechos
+
+Todos los derechos no concedidos expresamente mediante esta Licencia quedan reservados al Titular.
+
+En particular, el Titular se reserva, dentro de los límites legalmente aplicables, los derechos exclusivos sobre:
+
+- reproducción;
+- distribución;
+- comunicación pública;
+- transformación;
+- comercialización;
+- sublicencia;
+- explotación profesional;
+- explotación empresarial;
+- explotación comercial,
+
+del Software.
+
+La disponibilidad pública del código fuente no deberá interpretarse como abandono, renuncia o puesta del Software en el dominio público.
+
+---
+
+# 11. Ausencia de licencia sobre marcas
+
+Esta Licencia no concede ningún derecho sobre nombres comerciales, marcas, logotipos, dominios, diseños identificativos o signos distintivos pertenecientes al Titular.
+
+La autorización para utilizar el Software no autoriza a presentar una versión modificada, servicio o producto como:
+
+- oficial;
+- autorizado;
+- certificado;
+- patrocinado;
+- desarrollado conjuntamente,
+
+por el Titular.
+
+---
+
+# 12. Componentes de terceros
+
+El Software podrá incorporar dependencias, bibliotecas, paquetes, componentes, código u otros materiales pertenecientes a terceros.
+
+Cuando dichos elementos estén sujetos a licencias propias, dichas licencias serán las que determinen los derechos y obligaciones respecto de tales componentes.
+
+Nada de lo dispuesto en esta Licencia pretende limitar derechos concedidos directamente por terceros respecto de componentes de su titularidad.
+
+En caso de contradicción, esta Licencia se aplicará exclusivamente a aquellos elementos sobre los cuales el Titular tenga facultades suficientes para licenciar.
+
+---
+
+# 13. Límites legales imperativos
+
+Nada de lo establecido en esta Licencia pretende excluir, restringir o impedir aquellos derechos que la legislación aplicable reconozca al Usuario con carácter imperativo.
+
+Las limitaciones contenidas en la presente Licencia se interpretarán respetando, entre otras, las normas imperativas aplicables a los programas de ordenador, incluida la realización de copias de seguridad cuando legalmente proceda y los derechos legalmente reconocidos en materia de interoperabilidad, observación, estudio o comprobación del funcionamiento del programa.
+
+---
+
+# 14. Incumplimiento y terminación
+
+La autorización concedida mediante esta Licencia está condicionada al cumplimiento de sus términos.
+
+La realización de un acto que exceda los derechos expresamente concedidos determinará la pérdida de la autorización para dicho acto y podrá dar lugar a la terminación de los derechos concedidos mediante esta Licencia, sin perjuicio de las acciones que correspondan al Titular conforme a la legislación aplicable.
+
+Tras la terminación, el Usuario deberá cesar cualquier utilización del Software que dependa de los derechos concedidos mediante esta Licencia y eliminar las copias cuya conservación no venga amparada por la legislación aplicable o por otra autorización válida.
+
+La terminación de esta Licencia no impedirá al Titular reclamar, cuando proceda, daños, perjuicios, cesación de la conducta infractora, medidas cautelares o cualquier otra medida prevista legalmente.
+
+---
+
+# 15. Ausencia de garantías
+
+El Software se proporciona **“tal cual” y “según disponibilidad”**.
+
+En la máxima medida permitida por la legislación aplicable, el Titular no garantiza que el Software:
+
+- sea adecuado para una finalidad concreta;
+- esté libre de errores;
+- esté libre de vulnerabilidades;
+- funcione de manera ininterrumpida;
+- sea compatible con cualquier sistema;
+- produzca un resultado determinado.
+
+Nada de lo dispuesto en esta cláusula excluirá aquellas responsabilidades o garantías que legalmente no puedan excluirse o limitarse.
+
+---
+
+# 16. Limitación de responsabilidad
+
+En la máxima medida permitida por la legislación aplicable, el Titular no será responsable por daños indirectos, pérdida de información, pérdida de beneficios, interrupciones de actividad o consecuencias derivadas de una utilización del Software no autorizada o distinta de su finalidad.
+
+Esta limitación no será aplicable cuando la responsabilidad no pueda excluirse o limitarse válidamente conforme a la legislación aplicable.
+
+---
+
+# 17. No transmisión de propiedad
+
+La descarga, instalación, utilización o posesión de una copia del Software no transmite al Usuario la titularidad de los derechos de propiedad intelectual sobre el mismo.
+
+La presente Licencia constituye únicamente una autorización limitada de determinados actos de utilización.
+
+---
+
+# 18. Independencia de las cláusulas
+
+Si una disposición de esta Licencia fuese declarada total o parcialmente nula, inválida o inaplicable, ello no afectará a la validez de las restantes disposiciones.
+
+La disposición afectada deberá interpretarse o, cuando jurídicamente proceda, integrarse de la forma que más se aproxime a su finalidad legítima respetando la legislación aplicable.
+
+---
+
+# 19. No renuncia
+
+La falta de ejercicio por el Titular de cualquier derecho derivado de esta Licencia no podrá interpretarse como renuncia al mismo.
+
+Cualquier renuncia deberá realizarse de manera expresa.
+
+---
+
+# 20. Legislación aplicable
+
+Esta Licencia se regirá e interpretará conforme al **Derecho español**, sin perjuicio de las normas imperativas que resulten aplicables en otras jurisdicciones.
+
+Para cualquier controversia derivada de la interpretación o aplicación de esta Licencia serán competentes los juzgados y tribunales determinados conforme a las normas procesales aplicables.
+
+Nada de esta cláusula limitará los derechos de consumidores o usuarios cuando resulten aplicables normas imperativas relativas a competencia judicial o legislación aplicable.
+
+---
+
+# 21. Aceptación
+
+El ejercicio de cualquiera de las facultades que únicamente resultan permitidas por esta Licencia implica la aceptación de sus términos como condición de la autorización concedida por el Titular.
+
+Quien no acepte esta Licencia conserva únicamente aquellas facultades que le correspondan directamente conforme a la legislación aplicable, pero no recibe autorización adicional alguna del Titular.
+
+---
+
+# 22. Licencias alternativas
+
+El Titular conserva la facultad de distribuir o licenciar el Software, presente o futuro, bajo condiciones diferentes.
+
+La existencia de esta Licencia no impide al Titular:
+
+- conceder licencias comerciales;
+- conceder licencias profesionales;
+- conceder autorizaciones especiales;
+- distribuir versiones posteriores bajo otra licencia;
+- desarrollar versiones propietarias;
+- dejar de publicar futuras versiones del código fuente.
+
+Los derechos válidamente obtenidos respecto de una versión concreta conforme a esta Licencia se regirán por las condiciones aplicables a dicha versión.
+
+---
+
+# 23. Aviso resumido
+
+**Libro Hespérides es software de código fuente público para uso personal.**
+
+Puedes:
+
+✓ ver el código;  
+✓ auditarlo;  
+✓ estudiarlo;  
+✓ descargarlo;  
+✓ ejecutarlo para fines personales;  
+✓ modificarlo privadamente para fines personales.
+
+No puedes, sin una licencia adicional:
+
+✗ utilizarlo profesionalmente;  
+✗ utilizarlo en una empresa o despacho;  
+✗ utilizarlo para prestar servicios a clientes;  
+✗ explotarlo como SaaS o servicio alojado;  
+✗ comercializarlo;  
+✗ incorporar el Software a un producto comercial;  
+✗ explotar comercialmente una versión modificada basada en él;  
+✗ redistribuir públicamente el Software o forks que incorporen su código.
+
+**Para uso profesional, empresarial, institucional o comercial es necesaria una licencia independiente.**
+
+Contacto: **javier@legel.es**
+
+---
+
+Copyright © 2026 Javier Bravezo Durán.
+
+**Personal Use Source License v1.0 — Todos los derechos no expresamente concedidos quedan reservados.**

@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * ESQUEMA DE COLOR NATIVO.
+ *
+ * Es lo que tiñe los widgets del navegador (barras de scroll, selectores de fecha). Lo fija
+ * `aplicarTema()` como estilo en línea de <html>, y el script de `index.html` antes del
+ * primer pintado; estas reglas son el valor de reserva por si el script no llega a correr.
+ */
+:root {
+  color-scheme: light;
+}
+
+:root.dark {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/*
+ * LIENZO DE LA PÁGINA.
+ *
+ * Tailwind usa `darkMode: 'class'`: las variantes `dark:` se activan con la clase `dark` en
+ * <html>, que pone `src/ui/tema.ts` según la preferencia del alumno (claro / oscuro /
+ * sistema). Si `html` no tuviera fondo oscuro se aplicarían los textos claros de las
+ * variantes `dark:` SOBRE UN LIENZO BLANCO: claro sobre claro, ilegible.
+ *
+ * Se fija aquí, y no con clases, para que el color cubra también el rebote del scroll y el
+ * primer pintado, antes de que React monte nada.
+ */
+html {
+  background-color: rgb(var(--superficie)); /* stone-50 #fafaf9 */
+}
+
+/*
+ * El lienzo oscuro era un negro azulado FRÍO (#020617) sobre el que se pintaba
+ * una identidad cálida. Desde D1 la base neutra es stone en los dos temas
+ * (`tailwind.config.js`), así que el lienzo sale del mismo token que todo lo demás.
+ */
+html.dark {
+  background-color: rgb(var(--superficie)); /* stone-950 #0c0a09 */
+}
+
+/*
+ * Aquí vivían VEINTE redefiniciones de utilidades de Tailwind por su nombre
+ * (`.text-stone-400 { color: stone-500 }`, `.dark .text-brand-600 { color: brand-200 }`…):
+ * parches de contraste que existían porque los colores estaban calibrados para fondo blanco
+ * y sobre el lienzo oscuro caían por debajo del 4,5:1 de la WCAG AA. Su efecto secundario era
+ * el que denunciaba el diagnóstico (§2): la paleta real no se podía leer ni en
+ * `tailwind.config.js` ni en el componente, había que cruzar los dos con este fichero.
+ *
+ * D7 las borra las veinte. No hacen falta: desde D1 los colores semánticos son variables CSS
+ * con su valor en cada tema (`superficie`, `texto`, `texto-mudo`, `texto-acento`…), y en D7
+ * se sumaron los tres del semáforo y `texto-acento-fuerte`, que eran los últimos que
+ * dependían de un parche. Ahora una clase pinta lo que su nombre dice, y el contraste se
+ * comprueba donde se define el token.
+ */

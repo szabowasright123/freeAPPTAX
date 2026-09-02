@@ -1,0 +1,63 @@
+/**
+ * SelloKyc.tsx — sello visual discreto KYC / no-KYC (P6).
+ *
+ * Distintivo pequeño y no invasivo para marcar el origen de una operación (DIARIO) o de una
+ * porción de saldo (cartera por origen / SALDOS). Presentación pura: la lógica de origen
+ * vive en el motor (`engine/trazabilidad`).
+ *
+ * Desde D6 es el `Chip` del sistema: neutro para KYC (un dato administrativo más) y brand
+ * para no-KYC (la privacidad preservada es el realce de la casa). El mismo sello vale así
+ * en Diario, Archivo, Trazabilidad y Cartera sin cambiar de ropa.
+ */
+import type { Origen } from '../../engine/trazabilidad'
+import { Chip } from '../comp'
+
+/** Configuración visual por condición KYC. */
+const CONFIG = {
+  kyc: {
+    texto: 'KYC',
+    icono: '\u{1F6E1}',
+    titulo: 'Origen identificado (KYC): la vía conoce tu identidad',
+    tono: 'neutro',
+  },
+  noKyc: {
+    texto: 'no-KYC',
+    icono: '\u{1F464}',
+    titulo: 'Origen sin KYC: privacidad preservada por defecto',
+    tono: 'brand',
+  },
+} as const
+
+/**
+ * Sello discreto KYC / no-KYC. `soloIcono` lo reduce a un punto con el icono (para tablas
+ * densas como el DIARIO); en su forma normal muestra icono + texto.
+ */
+export function SelloKyc({
+  kyc,
+  soloIcono = false,
+  titulo,
+}: {
+  kyc: boolean
+  soloIcono?: boolean
+  titulo?: string
+}) {
+  const c = kyc ? CONFIG.kyc : CONFIG.noKyc
+  if (soloIcono) {
+    return (
+      <Chip tono={c.tono} soloIcono titulo={titulo ?? c.titulo} aria-label={c.titulo}>
+        <span aria-hidden>{c.icono}</span>
+      </Chip>
+    )
+  }
+  return (
+    <Chip tono={c.tono} titulo={titulo ?? c.titulo}>
+      <span aria-hidden>{c.icono}</span>
+      {c.texto}
+    </Chip>
+  )
+}
+
+/** Sello a partir del tipo de origen del motor (`'KYC'` | `'NO_KYC'`). */
+export function SelloOrigen({ origen, soloIcono }: { origen: Origen; soloIcono?: boolean }) {
+  return <SelloKyc kyc={origen === 'KYC'} soloIcono={soloIcono} />
+}
