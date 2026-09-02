@@ -30,7 +30,6 @@ import { CarteraPage } from '../pages/CarteraPage'
 import { PosicionesPage } from '../pages/PosicionesPage'
 import { ArchivoPage } from '../pages/ArchivoPage'
 import { AcercaPage } from '../pages/AcercaPage'
-import { PlanesPage } from '../pages/PlanesPage'
 import { BotonTema } from '../tema-ui'
 
 // Ajustes arrastra las librerías pesadas de xlsx (SheetJS) y exceljs: se carga bajo
@@ -64,8 +63,6 @@ function Pagina({ ruta }: { ruta: Ruta }) {
       return <ArchivoPage />
     case 'acerca':
       return <AcercaPage />
-    case 'planes':
-      return <PlanesPage />
     case 'ajustes':
       return (
         <Suspense fallback={<Cargando que="Ajustes" />}>

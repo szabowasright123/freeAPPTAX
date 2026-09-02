@@ -31,42 +31,41 @@ export function AcercaPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-lectura text-white/80">
             Esta edición gratuita te ayuda a registrar operaciones, conservar pruebas y visualizar tu cartera.
-            Cuando necesites aprender, compartir dudas o revisar tu caso, puedes continuar dentro del ecosistema LEGEL.
+            No incluye la app docente de pago ni enlaza a su acceso privado.
           </p>
         </div>
       </header>
 
       <section aria-labelledby="continuar-titulo" className="space-y-5">
         <div>
-          <h2 id="continuar-titulo" className="text-pagina font-bold tracking-tight text-texto">Elige cómo quieres continuar</h2>
+          <h2 id="continuar-titulo" className="text-pagina font-bold tracking-tight text-texto">Esta es la aplicación gratuita</h2>
           <p className="mt-1 text-cuerpo text-texto-secundario">
-            La aplicación seguirá siendo gratuita y local. Los enlaces siguientes abren servicios independientes;
-            ningún dato de tu libro se comparte al utilizarlos.
+            Los enlaces siguientes son informativos y abren recursos separados. Ningún dato de tu libro se comparte al utilizarlos.
           </p>
         </div>
 
         <div className="grid gap-4 lg:grid-cols-12">
           <Card tono="acento" className="lg:col-span-7">
             <div className="flex h-full flex-col">
-              <p className="text-apoyo font-semibold text-texto-acento">Founding · Estándar · Pro</p>
-              <h3 className="mt-2 text-titulo font-semibold tracking-tight text-texto">Campus LEGEL Learning</h3>
+              <p className="text-apoyo font-semibold text-texto-acento">Formación separada</p>
+              <h3 className="mt-2 text-titulo font-semibold tracking-tight text-texto">LEGEL Learning</h3>
               <p className="mt-2 max-w-2xl flex-1 text-cuerpo text-texto-secundario">
-                Consulta el itinerario, los módulos y las condiciones de cada membresía. Es la puerta de entrada
-                para alumnos y el lugar desde el que se organiza la formación.
+                Consulta la información pública sobre el itinerario formativo. La contratación, el campus privado
+                y la app docente funcionan fuera de esta aplicación gratuita.
               </p>
               <div className="mt-5">
-                <button type="button" onClick={() => irA('planes')} className={BTN_PRIMARIO}>Ver planes y precios</button>
+                <EnlaceExterno href={CONEXIONES.formacion} primario>Ver formación</EnlaceExterno>
               </div>
             </div>
           </Card>
 
           <Card className="lg:col-span-5">
             <div className="flex h-full flex-col">
-              <p className="text-apoyo font-semibold text-texto-acento">Founding · Estándar · Pro</p>
+              <p className="text-apoyo font-semibold text-texto-acento">Recurso externo</p>
               <h3 className="mt-2 text-titulo font-semibold tracking-tight text-texto">Asistente MCP</h3>
               <p className="mt-2 flex-1 text-cuerpo text-texto-secundario">
-                Accede al motor de conocimiento docente para orientarte por el temario y continuar la siguiente
-                actividad. No recibe automáticamente la información guardada en esta app.
+                Accede al asistente de aprendizaje desde su propio dominio. No recibe automáticamente la información
+                guardada en esta app.
               </p>
               <div className="mt-5"><EnlaceExterno href={CONEXIONES.mcp}>Abrir acceso al MCP</EnlaceExterno></div>
             </div>
@@ -75,42 +74,35 @@ export function AcercaPage() {
           <Card className="lg:col-span-12">
             <div className="grid gap-5 sm:grid-cols-[1fr_auto] sm:items-center">
               <div>
-                <p className="text-apoyo font-semibold text-texto-acento">Founding · Estándar · Pro</p>
-                <h3 className="mt-2 text-titulo font-semibold tracking-tight text-texto">Comunidad de Telegram</h3>
+                <p className="text-apoyo font-semibold text-texto-acento">Área privada</p>
+                <h3 className="mt-2 text-titulo font-semibold tracking-tight text-texto">Campus LEGEL Learning</h3>
                 <p className="mt-2 max-w-2xl text-cuerpo text-texto-secundario">
-                  Comparte dudas generales, materiales y aprendizajes con la comunidad de LEGEL Learning.
-                  No publiques claves privadas, semillas ni información personal de tu expediente.
+                  El campus es el lugar adecuado para alumnos acreditados. La app docente Pro no se sirve desde
+                  app.legelbitcoin.com y no se enlaza desde esta edición gratuita.
                 </p>
               </div>
-              <EnlaceExterno href={CONEXIONES.comunidad}>Abrir comunidad</EnlaceExterno>
+              <EnlaceExterno href={CONEXIONES.campus}>Ir al campus</EnlaceExterno>
             </div>
           </Card>
 
           <Card className="lg:col-span-6">
             <div className="flex h-full flex-col">
-              <p className="text-apoyo font-semibold text-texto-acento">Sólo Pro</p>
-              <h3 className="mt-2 text-titulo font-semibold tracking-tight text-texto">App docente especializada</h3>
+              <p className="text-apoyo font-semibold text-texto-acento">Aplicación abierta</p>
+              <h3 className="mt-2 text-titulo font-semibold tracking-tight text-texto">Qué incluye esta edición</h3>
               <p className="mt-2 flex-1 text-cuerpo text-texto-secundario">
-                Trabaja el taller, las autoevaluaciones y los entregables con acompañamiento. El acceso se gestiona
-                desde la página Pro; esta edición gratuita y la app docente permanecen separadas.
+                Libro, archivo, cartera, importación, copias locales y resultados orientativos para uso personal.
               </p>
-              <div className="mt-5"><EnlaceExterno href={CONEXIONES.appDocente}>Ir al acceso Pro</EnlaceExterno></div>
             </div>
           </Card>
 
           <Card className="lg:col-span-6">
             <div className="flex h-full flex-col">
-              <p className="text-apoyo font-semibold text-texto-acento">Formación general</p>
-              <h3 className="mt-2 text-titulo font-semibold tracking-tight text-texto">Curso intensivo</h3>
+              <p className="text-apoyo font-semibold text-texto-acento">Límite de alcance</p>
+              <h3 className="mt-2 text-titulo font-semibold tracking-tight text-texto">Qué queda fuera</h3>
               <p className="mt-2 flex-1 text-cuerpo text-texto-secundario">
-                Un recorrido concentrado de cuatro horas en vídeo y cuatro horas en directo, con materiales,
-                grabación y soporte incluidos.
+                La edición docente, los casos del taller, las autoevaluaciones, los entregables y el acompañamiento
+                pertenecen al campus acreditado, no a esta URL pública.
               </p>
-              <div className="mt-5">
-                <span className={`${BTN_SECUNDARIO} cursor-default opacity-60`} aria-label="Curso intensivo próximamente">
-                  Próximamente
-                </span>
-              </div>
             </div>
           </Card>
 

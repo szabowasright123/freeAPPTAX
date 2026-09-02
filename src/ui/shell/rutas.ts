@@ -8,7 +8,6 @@ export type Ruta =
   | 'ajustes'
   | 'importar'
   | 'acerca'
-  | 'planes'
   // Tipos heredados mientras se retiran físicamente los módulos docentes. No se
   // incluyen en VALIDAS ni en la navegación y, por tanto, no son accesibles.
   | 'panel'
@@ -53,7 +52,6 @@ const VALIDAS = new Set<Ruta>([
   ...RUTAS.map((r) => r.ruta),
   ...Object.values(SUBRUTAS).flatMap((subs) => (subs ?? []).map((s) => s.ruta)),
   'acerca',
-  'planes',
 ])
 
 export function rutaPrincipal(ruta: Ruta): Ruta | null {
@@ -77,7 +75,7 @@ export function etiquetaDe(ruta: Ruta): string {
     if (sub) return sub.etiqueta
   }
   if (ruta === 'acerca') return 'Acerca de'
-  return ruta === 'planes' ? 'Planes' : ruta
+  return ruta
 }
 
 function leerHash(): Ruta {
