@@ -492,7 +492,7 @@ export function DiarioPage() {
     <div className="space-y-6">
 
       <PageHeader
-        titulo="Diario"
+        titulo="Libro"
         subtitulo={
           <>
             {registros.length} apunte(s)
