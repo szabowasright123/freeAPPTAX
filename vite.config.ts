@@ -13,7 +13,7 @@ const version = (
 ).version
 
 // https://vite.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(version),
   },
@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => ({
   // Se ata a `mode` (no a `command`) para que `vite build` y `vite preview` —ambos
   // en modo production— coincidan; en dev (`vite`, modo development) usamos '/'.
   // Sobreescribible con VITE_BASE (p. ej. fork con otro nombre de repo).
-  base: process.env.VITE_BASE ?? (mode === 'production' ? '/libro-hesperides-gratis/' : '/'),
+  base: process.env.VITE_BASE ?? '/',
   // El puerto puede venir del entorno (PORT): la vista previa asigna uno libre cuando el
   // 5173 ya está ocupado por otro servidor de desarrollo.
   server: { port: Number(process.env.PORT) || 5173 },
@@ -93,4 +93,4 @@ export default defineConfig(({ mode }) => ({
       thresholds: { statements: 90, branches: 90, functions: 90, lines: 90 },
     },
   },
-}))
+})
