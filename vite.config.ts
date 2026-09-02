@@ -32,7 +32,7 @@ export default defineConfig({
     // 100 % sin conexión, incluida la plantilla XLSX y el chunk pesado de Ajustes.
     VitePWA({
       registerType: 'prompt', // el alumno decide cuándo recargar a la nueva versión
-      includeAssets: ['icon.svg', 'icon-maskable.svg', 'apple-touch-icon.png'],
+      includeAssets: ['legel-learning-icon.png', 'apple-touch-icon.png'],
       manifest: {
         name: 'LegeLearning | Libro Hespérides',
         short_name: 'LegeLearning',
@@ -55,7 +55,6 @@ export default defineConfig({
             type: 'image/png',
             purpose: 'maskable',
           },
-          { src: 'icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' },
         ],
       },
       workbox: {
