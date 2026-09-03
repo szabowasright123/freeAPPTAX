@@ -148,32 +148,36 @@ export function proponerCandidato(
     }
   }
 
-  if (destinoPropio) {
-    return {
-      ...base,
-      tipo: '',
-      confianza: 'pendiente',
+    if (destinoPropio) {
+      const tipoSugerido = movimiento.sugerenciaTipo && movimiento.sugerenciaTipo !== 'TRANSFERENCIA' ? movimiento.sugerenciaTipo : ''
+      const sugerencias = tipoSugerido ? [tipoSugerido, ...SUGERENCIAS_ENTRADA] : SUGERENCIAS_ENTRADA
+      return {
+        ...base,
+        tipo: '',
+        confianza: 'pendiente',
       motivo:
         'Entra desde una dirección que no consta como tuya: hay frontera con el exterior y ' +
         'la calificación la pones tú.',
       ubicacionOrigen: UBICACION_EXTERIOR,
       ubicacionDestino: destinoPropio,
-      sugerencias: SUGERENCIAS_ENTRADA,
+        sugerencias: [...new Set(sugerencias)],
       incluir: true,
+      }
     }
-  }
 
   if (origenPropio) {
-    return {
-      ...base,
-      tipo: '',
-      confianza: 'pendiente',
+      const tipoSugerido = movimiento.sugerenciaTipo && movimiento.sugerenciaTipo !== 'TRANSFERENCIA' ? movimiento.sugerenciaTipo : ''
+      const sugerencias = tipoSugerido ? [tipoSugerido, ...SUGERENCIAS_SALIDA] : SUGERENCIAS_SALIDA
+      return {
+        ...base,
+        tipo: '',
+        confianza: 'pendiente',
       motivo:
         'Sale hacia una dirección que no consta como tuya: puede ser venta, pago, permuta, ' +
         'donación… o un traslado a una wallet tuya que aún no has registrado.',
       ubicacionOrigen: origenPropio,
       ubicacionDestino: UBICACION_EXTERIOR,
-      sugerencias: SUGERENCIAS_SALIDA,
+      sugerencias: [...new Set(sugerencias)],
       incluir: true,
     }
   }

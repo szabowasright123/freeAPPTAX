@@ -31,10 +31,11 @@ export interface EntradaNav {
 
 export const RUTAS: EntradaNav[] = [
   { ruta: 'inicio', etiqueta: 'Inicio' },
+  { ruta: 'cartera', etiqueta: 'Cartera' },
   { ruta: 'diario', etiqueta: 'Libro' },
   { ruta: 'archivo', etiqueta: 'Archivo' },
-  { ruta: 'cartera', etiqueta: 'Cartera' },
-  { ruta: 'ajustes', etiqueta: 'Ajustes' },
+  { ruta: 'importar', etiqueta: 'Importar operaciones' },
+  { ruta: 'ajustes', etiqueta: 'Exportar' },
 ]
 
 export const SUBRUTAS: Partial<Record<Ruta, EntradaNav[]>> = {
@@ -42,10 +43,7 @@ export const SUBRUTAS: Partial<Record<Ruta, EntradaNav[]>> = {
     { ruta: 'cartera', etiqueta: 'Resumen' },
     { ruta: 'posiciones', etiqueta: 'Posiciones' },
   ],
-  ajustes: [
-    { ruta: 'ajustes', etiqueta: 'Copias y ajustes' },
-    { ruta: 'importar', etiqueta: 'Importar operaciones' },
-  ],
+  // La sección Exportación conserva una sola vista interna: Copia de seguridad.
 }
 
 const VALIDAS = new Set<Ruta>([

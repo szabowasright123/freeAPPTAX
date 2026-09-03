@@ -19,7 +19,6 @@ import {
   Card,
   PageHeader,
 } from '../comp'
-import { SelectorTema } from '../tema-ui'
 
 type Aviso = { tono: 'info' | 'exito' | 'error'; texto: string }
 
@@ -105,8 +104,8 @@ export function AjustesPage() {
   return (
     <div className="space-y-8">
       <PageHeader
-        titulo="Ajustes"
-        subtitulo="Gestiona la apariencia y protege los datos que permanecen en este navegador."
+        titulo="Exportar"
+        subtitulo="Gestiona copias y acciones críticas de mantenimiento del libro."
       />
 
       {aviso && (
@@ -114,10 +113,6 @@ export function AjustesPage() {
           {aviso.texto}
         </Banner>
       )}
-
-      <Card titulo="Apariencia" subtitulo="Elige cómo quieres ver la aplicación.">
-        <SelectorTema />
-      </Card>
 
       <Card
         titulo="Copia de seguridad"

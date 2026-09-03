@@ -29,13 +29,14 @@
  */
 import { aDecimalAnglo, instanteAHoraLocal, utcTextoAHoraLocal } from './formatos'
 import { parsearCSV } from './csv-generico'
+import type { TipoOperacion } from '../../engine/types'
 
 // ────────────────────────────────────────────────────────────────────────────
 // 1. Tipos
 // ────────────────────────────────────────────────────────────────────────────
 
 /** Qué exportación del explorador es el fichero. */
-export type ClaseExportacion = 'normal' | 'erc20' | 'internas'
+export type ClaseExportacion = 'normal' | 'erc20' | 'internas' | 'exchange'
 
 /** Sentido del movimiento respecto de la dirección exportada. */
 export type SentidoMovimiento = 'entrada' | 'salida' | 'ninguno'
@@ -63,6 +64,8 @@ export interface MovimientoExplorador {
   comisionActivo?: string
   /** Dirección del contrato (token o contrato invocado), si consta. */
   contrato?: string
+  /** Sugerencia de tipo para pre-selección en la bandeja de triaje. */
+  sugerenciaTipo?: TipoOperacion
   /** Transacción FALLIDA: no movió valor, pero gastó gas. Se importa solo por la comisión. */
   fallida: boolean
   /** Nº de línea en el CSV (1 = cabecera), para poder señalar el origen del dato. */

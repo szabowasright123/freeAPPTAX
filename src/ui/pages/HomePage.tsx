@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
 import { abrirBaseDatos, db, estadoAlmacenamientoPersistente } from '../../data/db'
 import { useLiveQuery } from '../../data/useLiveQuery'
-import { estadoCopia } from '../../data/repositorio'
+import { cargarCaso, estadoCopia } from '../../data/repositorio'
 import { necesitaRecordatorioCopia, textoRecordatorio } from '../../data/copias'
-import { Banner, Card, Chip, EmptyState, Stat } from '../comp'
+import { DEMO_LIBRO_ARCHIVO } from '../../data/demo/demoInicio'
+import { BTN_SECUNDARIO_COMPACTO, Banner, Card, Chip, EmptyState, Stat } from '../comp'
 import { irA } from '../shell/rutas'
 import { PanelInstalacion } from '../../pwa/PanelInstalacion'
 
@@ -21,6 +22,8 @@ export function HomePage() {
   const [estado, setEstado] = useState<EstadoDB>({ fase: 'abriendo' })
   const [persistente, setPersistente] = useState<boolean | null>(null)
   const [copiaDescartada, setCopiaDescartada] = useState(false)
+  const [demoCargando, setDemoCargando] = useState(false)
+  const [demoError, setDemoError] = useState<string | null>(null)
 
   useEffect(() => {
     let activo = true
@@ -59,12 +62,38 @@ export function HomePage() {
     return resultado.necesita ? resultado : null
   }, [datos, copia])
 
+  const manejarVerDemo = async () => {
+    setDemoError(null)
+    setDemoCargando(true)
+    try {
+      await cargarCaso(DEMO_LIBRO_ARCHIVO)
+      irA('diario')
+    } catch (error: unknown) {
+      setDemoError(error instanceof Error ? error.message : String(error))
+    } finally {
+      setDemoCargando(false)
+    }
+  }
+
   return (
     <div className="mx-auto max-w-4xl space-y-8">
       <section className="space-y-4">
         <p className="font-mono text-caption uppercase tracking-widest text-texto-mudo">
           Gratuita · privada · local
         </p>
+        <div className="flex justify-center">
+          <button
+            type="button"
+            onClick={manejarVerDemo}
+            disabled={demoCargando}
+            className={BTN_SECUNDARIO_COMPACTO + ' text-sm'}
+          >
+            {demoCargando ? 'Cargando demo…' : 'Ver Demo'}
+          </button>
+        </div>
+        {demoError && (
+          <p className="text-center text-sm text-semaforo-error">No se pudo cargar la demo: {demoError}</p>
+        )}
         <h1 className="max-w-lectura text-display font-semibold tracking-tight text-texto">
           Tu libro y tus justificantes, bajo tu control
         </h1>
@@ -84,7 +113,7 @@ export function HomePage() {
               onClick={() => irA('ajustes')}
               className="font-semibold underline underline-offset-2"
             >
-              Ajustes
+              Exportar
             </button>
             .
           </span>
